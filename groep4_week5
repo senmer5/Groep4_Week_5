@@ -1,0 +1,384 @@
+# HUISWERK GROEP 4
+# ---------------
+#  1 
+# version1
+
+# class Rectangle:
+#     def __init__ (self,width,height):
+#         self.width = width
+#         self.height = height
+
+#     def area(self):
+#         return self.width * self.height
+    
+#     def perimeter(self):
+#         return 2*(self.width+self.height)
+
+
+# # Rectangle sınıfının bir örneğini oluşturalım
+# parameter = Rectangle(5, 7)
+
+# # Alan ve çevreyi hesaplayalım
+# print("Rectangle area :", parameter.area())
+# print("Rectangle perimeter ", parameter.perimeter())
+
+# version 2
+
+# class Rectangle:
+#     def __init__(self, width, height):
+#         self.width=width
+#         self.height=height
+
+
+#     def area_of_rectangle(self):
+#         return self.width*self.height
+
+#     def perimeter_of_rectangle(self):
+#         return 2*(self.width+self.height)
+
+# width=int(input("Enter the width of the rectangle:"))
+# height=int(input("Enter the height of the ractangle:"))
+
+# rectangle=Rectangle(width, height)
+
+# area=rectangle.area_of_rectangle()
+# print(f"Area of a rectangle:{area}")
+
+# perimeter=rectangle.perimeter_of_rectangle()
+# print(f"Perimeter of a rectangle:{perimeter}")
+
+# -----------------------------------------------------------------------------
+
+# 2
+
+# version 1
+
+# class School:
+#     def __init__(self, name, foundation_year):
+#         self.name=name
+#         self.foundation_year=foundation_year
+#         self.students=[]
+#         self.teachers=[]
+
+#     def add_new_student(self, student_name, student_class):
+#         self.students.append({"name":student_name, "class":student_class})
+#         print(f"Student {student_name} added to class {student_class}")
+
+#     def add_new_teacher(self, teacher_name,branch):
+#         self.teachers.append({"name": teacher_name, "branch": branch})
+#         print(f"Teacher {teacher_name} added with branch {branch}")
+
+#     def view_student_list(self):
+#         if not self.students:
+#             print("No students enrolled in the school.")
+#         else:
+#             print("List of student:")
+#             for student in self.students:
+#                 print(f"Name:{student['name']}, Class:{student['class']}")
+
+#     def view_teacher_list(self):
+#         if not self.teachers:
+#             print("No teachers working in the school.")
+#         else:
+#             print("List of teachers:")
+#             for teacher in self.teachers:
+#                 print(f"Name:{teacher['name']}, Branch:{teacher['branch']}")
+
+# my_school=School(name="Venlo HBO", foundation_year=2000)
+
+# my_school.add_new_student("Yusuf", "11A")
+# my_school.add_new_student("Hamza", "9A")
+
+# my_school.add_new_teacher("Mr. John", "Mathematics")
+# my_school.add_new_teacher("Ms. Johnson", "Physics")
+
+# print()
+# my_school.view_student_list()
+
+# print()
+# my_school.view_teacher_list()
+
+
+# version 2
+
+# class School:
+#     def __init__(self, name, foundation_year):
+#         self.name = name
+#         self.foundation_year = foundation_year
+#         self.students = []  # Öğrenciler listesi
+#         self.teachers = []  # Öğretmenler listesi
+
+#     def add_new_student(self, student_name, group_name):
+#         """Yeni bir öğrenci ekler."""
+#         self.students.append({"name": student_name, "group": group_name})
+#         print(f"Öğrenci eklendi: Ad - {student_name}, Grup - {group_name}")
+
+#     def view_student_list(self):
+#         """Kayıtlı öğrencileri görüntüler."""
+#         print("\nÖğrenci Listesi:")
+#         for student in self.students:
+#             print(f"Ad: {student['name']}, Grup: {student['group']}")
+
+# # Okul nesnesi oluştur
+# school = School("Python Academy", 2005)
+
+# # Öğrencileri ekle
+# school.add_new_student("Ali", "5A")
+# school.add_new_student("Ayşe", "6B")
+
+# # Öğrenci listesini görüntüle
+# school.view_student_list()
+
+# --------------------------------------------------------------------
+
+# 3: 
+
+# version 1
+# class Shape:
+#     def __init__(self, width, height):
+#         self.width=width
+#         self.height=height
+
+# class Rectangle(Shape):
+#     def calculate_area(self):
+#         return self.width*self.height
+
+# class Square(Shape):
+#     def calculate_area(self):
+#         return self.width*self.height
+
+# rectangle=Rectangle(width=5, height=7)
+# rectangle_area=rectangle.calculate_area()
+# print(f"Rectangle Area:{rectangle_area}")
+
+# square=Square(width=4,height=4)
+# square_area=square.calculate_area()
+# print(f"Square Area:{square_area}")
+
+# verion 2
+
+# class Shape:
+#     def __init__(self,width,height):
+#         self.width= width
+#         self.height = height
+
+#     def calculate_area(self):
+#         return self.width * self.height
+    
+    
+# class Rectangle(Shape):
+#     def __init__(self, width, height):
+#         super().__init__(width, height)
+
+    
+# class Square(Shape):
+#      def __init__(self, side):  # side kullanimi
+#         super().__init__(side , side)
+#         self.side = side
+
+
+# rectangle = Rectangle(5, 10)
+# square = Square(4)
+
+# print(f"Rectangle Area: {rectangle.calculate_area()}")  # Rectangle Area: 50
+# print(f"Square Area: {square.calculate_area()}")        # Square Area: 16
+
+
+# --------------------------------------------------------------------------------
+
+# 4
+
+# verion 1
+
+# class Vehicle:
+#     def __init__(self, make,model, year):
+#         self.make=make
+#         self.model=model
+#         self.year=year
+
+#     def display_info(self):
+#         return f"Make: {self.make}, Model:{self.model}, Year:{self.year}"
+
+
+# class OffRoad(Vehicle):
+#     def __init__(self, make, model,year, four_wheel_drive):
+#         super().__init__(make, model,year)
+#         self.four_wheel_drive=four_wheel_drive
+
+#     def display_info(self):
+#         base_info=super().display_info()
+#         return f"{base_info}, Four-Wheel Drive:{'Yes' if self.four_wheel_drive else 'No'}"
+
+# class SportsCar(Vehicle):
+#     def __init__(self,make, model, year, max_speed):
+#         super().__init__(make, model, year)
+#         self.max_speed=max_speed
+
+#     def display_info(self):
+#         base_info=super().display_info()
+#         return f"{base_info}, Max Speed:{self.max_speed} km/h"
+# off_road_vehicle=OffRoad(make="Jeep", model="Wrangler", year=2002, four_wheel_drive=True)
+
+# sports_car=SportsCar(make="Honda", model="civic", year=2004, max_speed=120)
+
+# print("Off-Road Vehichle information:")
+# print(off_road_vehicle.display_info())
+
+# print("\nSports Car Information:")
+# print(sports_car.display_info())
+
+
+# version 2
+
+# class Vehicle:
+#     def __init__(self,make,model,year):
+#         self.make = make
+#         self.model = model
+#         self.year = year
+
+#     def display_info(self):
+#         return f"""
+#         MAKE   : {self.make}
+#         MODEL  : {self.model}
+#         YEAR   : {self.year}
+#         """
+# class Off_Road_Vehicle(Vehicle):
+#     def __init__(self, make, model, year,four_weel_drive):
+#         super().__init__(make, model, year)
+#         self.four_weel_drive = four_weel_drive
+
+#     def display_info(self):
+#         return f""" {super().display_info()}
+#         FOUR WEEL DRIVE : {self.four_weel_drive}
+#         """
+
+# class SportsCar(Vehicle):
+#     def __init__(self, make, model, year,max_speed):
+#         super().__init__(make, model, year)
+#         self.max_speed= max_speed
+
+#     def display_info(self):
+#         return f"""{super().display_info()}
+#         MAX SPEED : {self.max_speed}
+#         """
+    
+# off_road = Off_Road_Vehicle("Jeep", "Wrangler", 2022, True)
+# sports_car = SportsCar("Ferrari", "488 Spider", 2021, 340)
+
+# print("Off-Road Vehicle Info:")
+# print(off_road.display_info())  
+
+# print("\nSports Car Info:")
+# print(sports_car.display_info())  
+
+# --------------------------------------------------------------------
+# 5
+
+# version 1
+
+# class Customer:
+#     def __init__(self, name, surname, ID_number, phone_number):
+#         self.name=name
+#         self.surname=surname
+#         self.ID_number=ID_number
+#         self.phone_number=phone_number
+
+#     def display_info(self):
+#         return (f"Customer Information:\n"
+#         f"Name:{self.name}\n"
+#         f"Surname:{self.surname}\n"
+#         f"ID Number:{self.ID_number}\n"
+#         f"Phone:{self.phone_number}")
+
+
+# class Account(Customer):
+#     def __init__(self, customer, account_number, balance=0 ):
+#         super().__init__(customer.name, customer.surname, customer.ID_number, customer.phone_number)
+#         self.account_number=account_number
+#         self.balance=balance
+
+#     def deposit(self, amount):
+#         if amount>0:
+#             self.balance+=amount
+#             print(f"Deposited £{amount}. New Balance:£{self.balance}.")
+#         else:
+#             print("Invalid amount. Please enter a positive value.")
+
+#     def money_check(self, amount):
+#         if 0<amount<=self.balance:
+#             self.balance-=amount
+#             print(f"Withdrew £{amount}. Remaining Balance:£{self.balance}.")
+#         elif amount>self.balance:
+#             print("Insufficient fund. Transaction cannot be completed.")
+#         else:
+#             print("Invalid amount. Please enter a positive value.")
+
+#     def display_balance(self):
+#         print(f"Acount Baalance:£{self.balance}")
+
+# customer1=Customer("Yusuf", "Yilmaz", "10987654321", "0612936525")
+
+# acount1=Account(customer1, account_number=1001, balance=1000)
+
+# print(acount1.display_info())
+
+# acount1.deposit(2000)
+# acount1.money_check(1000)
+# acount1.money_check(3000)
+
+# acount1.display_balance()
+
+
+# version 2
+
+# class Customer():
+#     def __init__(self,name,surname,tc_identification,phone):
+#         self.name = name
+#         self.surname = surname
+#         self.tc_identification = tc_identification
+#         self.phone = phone
+
+#     def display_information(self):
+#         return f"""
+#         NAME              : {self.name}
+#         SURNAME           : {self.surname}
+#         TC IDENTIFICATION : {self.tc_identification}
+#         PHONE             : {self.phone}
+#         """
+
+# class Account(Customer):
+#     def __init__(self, name, surname, tc_identification, phone, account_number , balance):
+#         super().__init__(name, surname, tc_identification, phone)
+#         self.account_number = account_number
+#         self.balance = balance 
+
+#     def deposit(self,amount):
+#         self.balance +=amount
+#         return f"Deposited {amount}.New Balance : {self.balance}"
+    
+#     def money_check(self,amount):
+#         if self.balance >= amount:
+#             self.balance -= amount
+#             return f"Withdrew {amount}. Remaining balance: {self.balance}"
+#         else:
+#             return "Insufficient balance!"
+    
+#     def display_balance(self):
+#         return f"Acoount Balance : {self.balance}"
+    
+
+# customer1 = Customer("John", "Doe", "12345678901", "5551234567")
+# print("Customer Information:")
+# print(customer1.display_information())
+
+# account1 = Account("John", "Doe", "12345678901", "5551234567", "9876543210", 1000)
+
+# print("\nAccount Operations :\n")
+# print(account1.display_balance())  # Account Balance: 1000
+# print(account1.deposit(500))       # Deposited 500. New balance: 1500
+# print(account1.money_check(200))   # Withdrew 200. Remaining balance: 1300
+# print(account1.money_check(1500))  # Insufficient balance!
+# print(account1.display_balance())  # Account Balance: 1300
+    
+
+
